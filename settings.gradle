@@ -1,0 +1,5 @@
+rootProject.name = 'rabbitmq-test'
+include 'rabbit-client'
+include 'server'
+include 'shared'
+

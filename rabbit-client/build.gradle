@@ -1,0 +1,22 @@
+group 'ru.orbot90'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+war {
+    archiveName = "client.war"
+    manifest {
+        attributes 'Implemetation-Title': 'Client',
+                'Implementation-Version': "666"
+    }
+}
+
+dependencies {
+    compile project(':shared')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

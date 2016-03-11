@@ -1,0 +1,44 @@
+group 'ru.orbot90'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE'
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+
+    apply plugin: 'spring-boot'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    compileJava.options.encoding = 'UTF-8'
+
+    dependencies {
+        compile 'org.springframework.amqp:spring-rabbit:1.4.5.RELEASE',
+                'org.apache.camel:camel-jms:2.15.2',
+                "org.springframework:spring-jms",
+                "org.springframework.boot:spring-boot-starter-amqp",
+                'org.apache.camel:camel-spring-boot:2.15.1',
+                'com.bluelock:camel-spring-amqp:1.7.0',
+                'org.apache.camel:camel-jms:2.15.2',
+                'org.apache.camel:camel-sql:2.15.2',
+                'org.apache.activemq:activemq-camel:5.11.1',
+                'org.apache.camel:camel-bean-validator:2.15.2',
+                'org.springframework.amqp:spring-rabbit:1.4.5.RELEASE',
+                "org.springframework.boot:spring-boot-starter-web"
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+}
